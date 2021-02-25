@@ -1,3 +1,5 @@
+package part1
+
 import kotlin.math.*
 
 fun mySin(x: Number): Double {
