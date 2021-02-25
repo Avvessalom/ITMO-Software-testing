@@ -19,6 +19,7 @@ fun search(start: Int, finish: Int, graphMatrix: ArrayList<IntArray>): ArrayList
         currentNode = searchQueue.pop()
         visited.add(currentNode)
         if (currentNode == finish) {
+            graph.add(intArrayOf(0, 0))
             return graph
         }
 
@@ -39,6 +40,16 @@ fun search(start: Int, finish: Int, graphMatrix: ArrayList<IntArray>): ArrayList
     return graph
 }
 
+fun isReachable(start: Int, finish: Int, graphMatrix: ArrayList<IntArray>): Boolean {
+    val graph = search(start, finish, graphMatrix)
+    for (i in graph) {
+        if (i[1] == finish) {
+            return true
+        }
+    }
+    return false
+}
+
 fun main() {
     val array = ArrayList<IntArray>()
     array.add(intArrayOf(1, 2, 3))
@@ -50,16 +61,16 @@ fun main() {
     array.add(intArrayOf())
     array.add(intArrayOf(5, 6))
 
-    val start = 0;
-    val finish = 7;
+    val start = 0
+    val finish = 7
     val graph = search(start, finish, array)
-    var found = false;
+    var found = false
     for (i in graph) {
         print(i[0])
         print("->")
         print(i[1])
         if (i[1] == finish) {
-            found = true;
+            found = true
         }
         println()
     }
