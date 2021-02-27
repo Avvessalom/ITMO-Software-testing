@@ -5,11 +5,11 @@ open class Robot(
 ) : RobotAction {
 
     override fun sit(where: Place) {
-        print("сидящего в $where, ")
+        print("сидит в $where. ")
     }
 
-    override fun getUp(whence: Place, type: String) {
-        print("$type поднялся из $whence на ноги.")
+    override fun getUp(whence: Place, type: String, part: PartOfRobot) {
+        print("$type поднялся из $whence на ${part.type}.")
     }
 
     override fun tryToGo(where: Place) {
