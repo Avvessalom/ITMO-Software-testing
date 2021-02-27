@@ -5,4 +5,8 @@ class HeadOfRobot(override val status: String) : PartOfRobot {
     fun action(typeOfAction: String, action: String) {
         print("Голова робота $typeOfAction $action. ")
     }
+
+    override fun toString(): String {
+        return type
+    }
 }

@@ -13,11 +13,11 @@ open class Robot(
     }
 
     override fun tryToGo(where: Place) {
-        print("героическая попытка пересечь $where.")
+        print(" героическая попытка пересечь $where.")
     }
 
     override fun watch(forWhat: Human) {
-        print("Смотреть сквозь плечо $forWhat")
+        print("Смотреть сквозь левое плечо $forWhat")
     }
 
     override fun stop(inFrontOfWho: Human) {
