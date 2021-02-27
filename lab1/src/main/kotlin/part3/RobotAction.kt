@@ -1,11 +1,13 @@
 package part3
 
 interface RobotAction {
-    fun sit(place: Place)
+    fun sit(where: Place)
 
-    fun getUp(place: Place)
+    fun getUp(whence: Place, type: String)
 
-    fun tryToGo(place: Place)
+    fun tryToGo(where: Place)
 
-    fun watch(TODO)
+    fun watch(forWhat: Human)
+
+    fun stop(inFrontOfWho: Human)
 }

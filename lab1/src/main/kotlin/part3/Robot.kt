@@ -1,23 +1,30 @@
 package part3
 
-open class Robot (name: String,
-            head: Boolean,
-            hands: Boolean,
-            legs: Boolean): RobotAction {
+open class Robot(
+    name: String
+) : RobotAction {
 
-    override fun sit(place: Place) {
-        TODO("Not yet implemented")
+    override fun sit(where: Place) {
+        print("сидящего в $where, ")
     }
 
-    override fun getUp(place: Place) {
-        TODO("Not yet implemented")
+    override fun getUp(whence: Place, type: String) {
+        print("$type поднялся из $whence на ноги.")
     }
 
-    override fun tryToGo(place: Place) {
-        TODO("Not yet implemented")
+    override fun tryToGo(where: Place) {
+        print("героическая попытка пересечь $where.")
     }
 
-    override fun watch(TODO: ) {
-        TODO("Not yet implemented")
+    override fun watch(forWhat: Human) {
+        print("Смотреть сквозь плечо $forWhat")
+    }
+
+    override fun stop(inFrontOfWho: Human) {
+        print("Остановился перед $inFrontOfWho.")
+    }
+
+    override fun toString(): String {
+        return "Робот "
     }
 }
