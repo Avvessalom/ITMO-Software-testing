@@ -4,9 +4,9 @@ import org.junit.jupiter.api.*
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
-class domain_model_tests {
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class domainModelTests {
     private val testHuman = Human("test1", 10)
     private val trilian = Human("Триллиан", 10)
     private val testRobot = Robot("kek")
