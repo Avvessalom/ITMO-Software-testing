@@ -10,11 +10,14 @@ class Human(var name: String, val age: Int) {
                 value
             }
         }
-    fun seem (isAlien: Boolean){
+    fun seem (isAlien: Boolean): Boolean {
         if (isAlien){
           print("показалось ")
+            return true
         }
+        return false
     }
+
     override fun toString(): String {
         return if (name == "Триллиан") {
             this.name

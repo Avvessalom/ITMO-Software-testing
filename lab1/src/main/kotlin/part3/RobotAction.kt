@@ -9,6 +9,6 @@ interface RobotAction {
 
     fun watch(forWhat: Human)
 
-    fun stop(inFrontOfWho: Human)
+    fun stop(inFrontOfWho: Human) : String
 
 }

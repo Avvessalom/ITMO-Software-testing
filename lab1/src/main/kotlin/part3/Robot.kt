@@ -20,8 +20,9 @@ open class Robot(
         print("Смотреть сквозь левое плечо $forWhat")
     }
 
-    override fun stop(inFrontOfWho: Human) {
+    override fun stop(inFrontOfWho: Human): String {
         print("Остановился перед $inFrontOfWho.")
+        return "Остановился перед $inFrontOfWho."
     }
 
     override fun toString(): String {
