@@ -7,6 +7,15 @@ class BFSTest {
     val smallGraph = ArrayList<IntArray>()
     val largeGraph = ArrayList<IntArray>()
 
+    fun createStringPath(path: ArrayList<IntArray>):ArrayList<String> {
+        val list = ArrayList<String>()
+        for (node in path) {
+            val strPath = node[0].toString() + node[1].toString()
+            list.add(strPath)
+        }
+        return list
+    }
+
     @BeforeAll
     fun initSmallGraph() {
         smallGraph.add(intArrayOf(1, 2, 3))
@@ -32,6 +41,50 @@ class BFSTest {
     @Test
     fun `test graph1 with path 0--0`() {
         Assertions.assertTrue(isReachable(0, 0, smallGraph))
+    }
+
+    @Test
+    fun `test graph breadcrumbs with path 0--6` () {
+        val expectedPath = ArrayList<IntArray>()
+        expectedPath.add(intArrayOf(0, 1))
+        expectedPath.add(intArrayOf(0, 2))
+        expectedPath.add(intArrayOf(0, 3))
+        expectedPath.add(intArrayOf(1, 5))
+        expectedPath.add(intArrayOf(1, 6))
+
+        val path = search(0, 6, smallGraph)
+        val stringPath = createStringPath(path)
+        for (node in expectedPath) {
+            Assertions.assertTrue(stringPath.contains(node[0].toString() + node[1].toString()))
+        }
+    }
+
+    @Test
+    fun `test graph breadcrumbs without path 0--7` () {
+        val expectedPath = ArrayList<IntArray>()
+        expectedPath.add(intArrayOf(0, 1))
+        expectedPath.add(intArrayOf(0, 2))
+        expectedPath.add(intArrayOf(0, 3))
+        expectedPath.add(intArrayOf(1, 5))
+        expectedPath.add(intArrayOf(1, 6))
+
+        val path = search(0, 7, smallGraph)
+        val stringPath = createStringPath(path)
+        for (node in expectedPath) {
+            Assertions.assertTrue(stringPath.contains(node[0].toString() + node[1].toString()))
+        }
+    }
+
+    @Test
+    fun `test graph breadcrumbs with path 0--0` () {
+        val expectedPath = ArrayList<IntArray>()
+        expectedPath.add(intArrayOf(0, 0))
+
+        val path = search(0, 0, smallGraph)
+        val stringPath = createStringPath(path)
+        for (node in expectedPath) {
+            Assertions.assertTrue(stringPath.contains(node[0].toString() + node[1].toString()))
+        }
     }
 
     @BeforeAll
