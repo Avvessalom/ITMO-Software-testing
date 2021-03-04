@@ -19,11 +19,35 @@
 ### Часть 2
 Провести модульное тестирование алгоритма BFS (обход ориентированного графа в ширину). Для этого выбрать характерные точки внутри алгоритма, и для предложенных самостоятельно наборов исходных данных записать последовательность попадания в характерные точки. Сравнить последовательность попадания с эталонной;
 
+#### Варианты графов:
+Маленький
+
+![маленький граф](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab1/img/graph_min.png?raw=true)
+
+Большой
+
+![большой граф](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab1/img/graph_max.png?raw=true)
+
+#### Пример теста
+
+```kotlin
+    @Test
+    fun `test small graph breadcrumbs with path 0--0` () {
+        val expectedPath = ArrayList<IntArray>()
+        expectedPath.add(intArrayOf(0, 0))
+
+        val path = search(0, 0, smallGraph)
+        val stringPath = createStringPath(path)
+        for (node in expectedPath) {
+            Assertions.assertTrue(stringPath.contains(node[0].toString() + node[1].toString()))
+        }
+    }
+```
+
 ### Часть 3
 Сформировать доменную модель для заданного текста.  Разработать тестовое покрытие для данной доменной модели
 
 Описание предметной области
-
 
 Голова робота, сидящего в углу, сначала резко дернулась вверх, а затем едва заметно закачалась из стороны в сторону. Он тяжело поднялся на ноги и сделал то, что показалось бы постороннему наблюдателю героической попыткой пересечь комнату. Он остановился перед Триллиан и посмотрел, как будто, сквозь ее левое плечо.
 
@@ -31,3 +55,10 @@
 
 ![uml](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab1/img/UML.PNG?raw=true)
 
+Пример теста
+```kotlin
+    @Test
+    fun `test robot getup`() {
+        assertEquals("жоска поднялся из ${testPlase.toString()} на ${testLeg.toString()}.",
+            testRobot.getUp(testPlase, "жоска", testLeg))
+```
