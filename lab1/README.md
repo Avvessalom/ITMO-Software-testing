@@ -5,7 +5,7 @@
 
 Тестовое покрытие обрабатывает всю тригонометрическую окружность
 
-![тригонометрическая окружность](https://github.com/Avvessalom/ITMO-Software-testing/tree/master/lab1/img/img1.jpg)
+![тригонометрическая окружность](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab1/img/img1.jpg?raw=true)
 
 Пример тестов одной четверти
 ```kotlin
@@ -29,5 +29,5 @@
 
 ##### UML диаграмма разработанной предметной области
 
-![uml](https://github.com/Avvessalom/ITMO-Software-testing/tree/master/lab1/img/UML.PNG)
+![uml](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab1/img/UML.PNG?raw=true)
 
