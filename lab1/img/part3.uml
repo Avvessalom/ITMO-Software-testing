@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>part3</OriginalElement>
+  <nodes>
+    <node x="0.0" y="424.0">part3.Human</node>
+    <node x="378.75" y="0.0">part3.PartOfRobot</node>
+    <node x="201.0" y="424.0">part3.Place</node>
+    <node x="0.0" y="192.0">part3.Robot</node>
+    <node x="0.0" y="0.0">part3.RobotAction</node>
+    <node x="439.0" y="126.0">part3.HeadOfRobot</node>
+    <node x="285.0" y="137.0">part3.LegOfRobot</node>
+    <node x="362.0" y="424.0">part3.MainKt</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="part3.HeadOfRobot" target="part3.PartOfRobot">
+      <point x="0.0" y="-94.5" />
+      <point x="525.5" y="101.0" />
+      <point x="468.75" y="101.0" />
+      <point x="30.0" y="38.0" />
+    </edge>
+    <edge source="part3.LegOfRobot" target="part3.PartOfRobot">
+      <point x="0.0" y="-83.5" />
+      <point x="352.0" y="101.0" />
+      <point x="408.75" y="101.0" />
+      <point x="-30.0" y="38.0" />
+    </edge>
+    <edge source="part3.Robot" target="part3.RobotAction">
+      <point x="0.0" y="-93.5" />
+      <point x="0.0" y="71.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="162.5" y="325.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
