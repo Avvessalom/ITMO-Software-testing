@@ -6,6 +6,7 @@ import org.junit.jupiter.api.*
 class BFSTest {
     val smallGraph = ArrayList<IntArray>()
     val largeGraph = ArrayList<IntArray>()
+    val unConnectedGraph = ArrayList<IntArray>()
 
     private fun createStringPath(path: ArrayList<IntArray>):ArrayList<String> {
         val list = ArrayList<String>()
@@ -41,6 +42,11 @@ class BFSTest {
     @Test
     fun `test small graph with path 0--0`() {
         Assertions.assertTrue(isReachable(0, 0, smallGraph))
+    }
+
+    @Test
+    fun `test small graph with path 0-15`() {
+        Assertions.assertFalse(isReachable(0, 15, smallGraph))
     }
 
     @Test
@@ -125,6 +131,11 @@ class BFSTest {
     }
 
     @Test
+    fun `test large graph with path 7-30` () {
+        Assertions.assertFalse(isReachable(7, 30, largeGraph))
+    }
+
+    @Test
     fun `test large graph breadcrumbs with path 0--17` () {
         val expectedPath = ArrayList<IntArray>()
         expectedPath.add(intArrayOf(0, 2))
@@ -181,4 +192,49 @@ class BFSTest {
             Assertions.assertTrue(stringPath.contains(node[0].toString() + node[1].toString()))
         }
     }
+
+    @BeforeAll
+    fun initUnConnectedGraph() {
+        unConnectedGraph.add(intArrayOf())
+        unConnectedGraph.add(intArrayOf())
+        unConnectedGraph.add(intArrayOf())
+        unConnectedGraph.add(intArrayOf())
+        unConnectedGraph.add(intArrayOf())
+        unConnectedGraph.add(intArrayOf())
+    }
+
+    @Test
+    fun `test unconnected graph path 0-0`() {
+        Assertions.assertTrue(isReachable(0, 0, unConnectedGraph))
+    }
+
+    @Test
+    fun `test unconnected graph path 0-4`() {
+        Assertions.assertFalse(isReachable(0, 4, unConnectedGraph))
+    }
+
+    @Test
+    fun `test unconnected graph breadcrumbs with path 1--1` () {
+        val expectedPath = ArrayList<IntArray>()
+        expectedPath.add(intArrayOf(1, 1))
+
+        val path = search(1, 1, largeGraph)
+        val stringPath = createStringPath(path)
+        for (node in expectedPath) {
+            Assertions.assertTrue(stringPath.contains(node[0].toString() + node[1].toString()))
+        }
+    }
+
+    @Test
+    fun `test unconnected graph breadcrumbs with path 0--4` () {
+        val expectedPath = ArrayList<IntArray>()
+        expectedPath.add(intArrayOf(0, 0))
+
+        val path = search(0, 0, largeGraph)
+        val stringPath = createStringPath(path)
+        for (node in expectedPath) {
+            Assertions.assertTrue(stringPath.contains(node[0].toString() + node[1].toString()))
+        }
+    }
+
 }
