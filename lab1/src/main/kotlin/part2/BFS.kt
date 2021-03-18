@@ -19,7 +19,7 @@ fun search(start: Int, finish: Int, graphMatrix: ArrayList<IntArray>): ArrayList
         currentNode = searchQueue.pop()
         visited.add(currentNode)
         if (currentNode == finish) {
-            graph.add(intArrayOf(currentNode, currentNode))
+            graph.add(intArrayOf(currentNode, currentNode + 1))
             return graph
         }
 
