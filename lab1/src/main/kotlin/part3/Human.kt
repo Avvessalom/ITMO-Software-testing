@@ -5,13 +5,13 @@ class Human(var name: String, val age: Int) {
         get() = field
         set(value) {
             field = if (this.name != "Триллиан") {
-                true
+                false
             } else {
                 value
             }
         }
     fun seem (isAlien: Boolean): Boolean {
-        if (isAlien){
+        if (!isAlien){
           print("показалось ")
             return true
         }

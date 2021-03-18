@@ -1,6 +1,10 @@
 package part2
 
 import org.junit.jupiter.api.*
+import java.lang.IndexOutOfBoundsException
+import java.lang.NullPointerException
+import kotlin.test.assertFailsWith
+import kotlin.test.expect
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class BFSTest {
@@ -234,6 +238,14 @@ class BFSTest {
         val stringPath = createStringPath(path)
         for (node in expectedPath) {
             Assertions.assertTrue(stringPath.contains(node[0].toString() + node[1].toString()))
+        }
+    }
+
+    @Test()
+    fun `test empty graph`() {
+        val array = ArrayList<IntArray>()
+        assertFailsWith<IndexOutOfBoundsException> {
+            isReachable(0, 4, array)
         }
     }
 

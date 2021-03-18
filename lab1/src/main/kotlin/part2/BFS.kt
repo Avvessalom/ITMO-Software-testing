@@ -43,7 +43,7 @@ fun search(start: Int, finish: Int, graphMatrix: ArrayList<IntArray>): ArrayList
 fun isReachable(start: Int, finish: Int, graphMatrix: ArrayList<IntArray>): Boolean {
     val graph = search(start, finish, graphMatrix)
     for (i in graph) {
-        if (i[1] == finish) {
+        if (i[2] == finish) {
             return true
         }
     }
