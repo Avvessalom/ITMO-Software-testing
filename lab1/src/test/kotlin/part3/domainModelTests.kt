@@ -112,4 +112,9 @@ class DomainModelTests {
         { assertEquals("Голова робота резко дернулась вверх. ", testHead.action("резко", "дернулась вверх")) },
         { assertEquals("Голова робота внезапно ринулась в пляс. ", testHead.action("внезапно", "ринулась в пляс")) }
     )
+    @Test
+    @DisplayName("robot head name")
+    fun `test robot head name` () {
+        assertEquals("Голова", testHead.toString())
+    }
 }
