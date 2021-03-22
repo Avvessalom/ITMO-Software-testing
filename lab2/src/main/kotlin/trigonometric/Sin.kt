@@ -3,7 +3,7 @@ package trigonometric
 import kotlin.math.*
 
 class Sin: TrigonometricFunction<Number> {
-    override fun invoke(vararg args: Number, presition: Double): Double {
+    override fun invoke(vararg args: Number): Double {
         val fact: (Int) -> Int = { (1..it).fold(1) {acc, i -> acc * i} }
         val x = args[0].toDouble()
 
