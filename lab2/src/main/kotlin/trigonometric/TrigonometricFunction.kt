@@ -1,5 +1,7 @@
 package trigonometric
 
+import kotlin.math.absoluteValue
+
 interface TrigonometricFunction<N: Number?> {
     companion object {
         const val PRESITION = 0.0000001
@@ -9,5 +11,5 @@ interface TrigonometricFunction<N: Number?> {
     val Number.isSpecial: Boolean
         get() = this in setOf(Double.NaN, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY)
 
-    operator fun invoke(vararg args: N, presition: Double = PRESITION): Double
+    operator fun invoke(vararg args: N): Double
 }
