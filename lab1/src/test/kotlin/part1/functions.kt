@@ -71,6 +71,7 @@ class FunctionsTests {
     @Test
     fun `infinity test mySin()`() = assertAll(
         { assertEquals(Double.NaN, mySin(Double.POSITIVE_INFINITY)) },
+        { assertEquals(Double.NaN, mySin(Double.POSITIVE_INFINITY))},
         { assertEquals(Double.NaN, mySin(Double.NaN)) }
     )
 }
