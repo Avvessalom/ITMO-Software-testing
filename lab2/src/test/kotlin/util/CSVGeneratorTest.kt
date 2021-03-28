@@ -11,14 +11,14 @@ class CSVGeneratorTest {
     @Test
     fun testLog5() {
         val log = Log()
-        generator.setFilePath("test-log5-0.1-0.1-1-result.csv")
+        generator.setFilePath("test-log5-0.1-0.1-1-result")
         generator.generate(log, 0.1, 0.1, 1.0, 0.1, 5.0)
     }
 
     @Test
     fun testSin() {
         val sin = Sin()
-        generator.setFilePath("test-sin-0.1-0-2pi-result.csv")
+        generator.setFilePath("test-sin-0.1-0-2pi-result")
         generator.generate(sin, 0.1, 0.0, 2*PI)
     }
 }

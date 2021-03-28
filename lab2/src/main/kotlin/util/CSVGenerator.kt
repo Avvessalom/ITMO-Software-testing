@@ -6,13 +6,20 @@ import java.io.FileOutputStream
 import java.io.PrintStream
 import java.nio.file.Files.createDirectories
 import java.nio.file.Path
+import java.time.Instant
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class CSVGenerator(_filepath: String = "src/test/resources/results/") {
     private var filepath = _filepath
     private var filename = "result.csv"
     fun setFilePath(filename: String) {
-        this.filename = filename
+        this.filename = "${filename}_${
+            DateTimeFormatter
+            .ofPattern("dd.MM.yyyy-HH_mm")
+            .withZone(ZoneOffset.UTC)
+            .format(Instant.now())}.csv"
     }
 
     fun generate(func: LogarithmicFunction<Number>, step: Double,
