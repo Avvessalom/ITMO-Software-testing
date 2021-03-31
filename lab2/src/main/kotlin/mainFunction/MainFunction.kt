@@ -4,7 +4,7 @@ import logarithmic.*
 import trigonometric.*
 import kotlin.math.pow
 
-class MainFunction {
+class MainFunction: LogarithmicFunction<Number> {
     var sin = Sin()
     var cos = Cos()
     var tan = Tan()
@@ -13,7 +13,7 @@ class MainFunction {
     var ln = Ln()
     var log = Log()
 
-    fun invoke(vararg args: Number, precision: Double): Double{
+    override fun invoke(vararg args: Number, precision: Double): Double{
         val x = args[0].toDouble()
         val p = precision
         return if (x <=  0)
