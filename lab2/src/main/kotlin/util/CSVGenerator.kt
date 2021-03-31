@@ -15,11 +15,7 @@ class CSVGenerator(_filepath: String = "src/test/resources/results/") {
     private var filepath = _filepath
     private var filename = "result.csv"
     fun setFilePath(filename: String) {
-        this.filename = "${filename}_${
-            DateTimeFormatter
-            .ofPattern("dd.MM.yyyy-HH_mm")
-            .withZone(ZoneOffset.UTC)
-            .format(Instant.now())}.csv"
+        this.filename = "${filename}.csv"
     }
 
     fun generate(func: LogarithmicFunction<Number>, step: Double,
