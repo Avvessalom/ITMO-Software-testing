@@ -2,7 +2,7 @@ package trigonometric
 
 class Csc: TrigonometricFunction<Number> {
 
-    val sin = Sin()
+    var sin = Sin()
 
     override fun invoke(vararg args: Number): Double {
         val x = args[0].toDouble()
