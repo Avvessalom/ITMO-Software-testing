@@ -2,6 +2,7 @@ package util
 
 import logarithmic.Ln
 import logarithmic.Log
+import mainFunction.MainFunction
 import org.junit.jupiter.api.Test
 import trigonometric.*
 import java.lang.Math.PI
@@ -58,5 +59,12 @@ class CSVGeneratorTest {
         val csc = Csc()
         generator.setFilePath("test-csc-0.1-0-2pi-result")
         generator.generate(csc, 0.1, 0.0, 2*PI)
+    }
+
+    @Test
+    fun testMain(){
+        val main = MainFunction()
+        generator.setFilePath("test-main")
+        generator.generate(main, 0.1, -0.5, 1.0, 0.1, 5.0)
     }
 }
