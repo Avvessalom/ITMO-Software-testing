@@ -1,4 +1,4 @@
-package part1
+package trigonometric
 
 import org.junit.jupiter.api.*
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -6,9 +6,8 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import kotlin.math.*
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class FunctionsTests {
-
-
+class SinUnitTests {
+    var mySin = Sin()
     @Test
     @DisplayName("random numbers")
     fun `mySin(x) algorithm test`() = assertAll(
@@ -70,8 +69,8 @@ class FunctionsTests {
 
     @Test
     fun `infinity test mySin()`() = assertAll(
-        { assertEquals(Double.NaN, mySin(Double.POSITIVE_INFINITY)) },
-        { assertEquals(Double.NaN, mySin(Double.POSITIVE_INFINITY))},
+        { assertEquals(Double.NEGATIVE_INFINITY, mySin(Double.NEGATIVE_INFINITY)) },
+        { assertEquals(Double.POSITIVE_INFINITY, mySin(Double.POSITIVE_INFINITY))},
         { assertEquals(Double.NaN, mySin(Double.NaN)) }
     )
 }
