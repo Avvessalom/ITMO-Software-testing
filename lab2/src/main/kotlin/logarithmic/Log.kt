@@ -7,7 +7,7 @@ class Log: LogarithmicFunction<Number> {
     override fun invoke(vararg args: Number, precision: Double): Double {
         if (args.size < 2) throw IllegalArgumentException("Two arguments!!! Parameter and Base")
         val (x, base) = args.map { it.toDouble() }
-        return if (x <= 0 || x.isSpecial) Double.NaN else
+        return if (x < 0 || x.isSpecial) Double.NaN else if (x == 0.0) Double.POSITIVE_INFINITY else
             ln(x, precision=precision) / ln(base, precision=precision)
     }
 }

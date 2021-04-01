@@ -19,12 +19,10 @@ class MainIntegrationTests {
     val log3Mock = Mockito.mock(Log::class.java)
     val log5Mock = Mockito.mock(Log::class.java)
     val log10Mock = Mockito.mock(Log::class.java)
-    var sin = Sin()
     var cos = Cos()
     var tan = Tan()
     var cot = Cot()
     var csc = Csc()
-    var ln = Ln()
     var log = Log()
 
     @DisplayName("main test cos")
@@ -91,7 +89,7 @@ class MainIntegrationTests {
     @ParameterizedTest
     @CsvFileSource(resources = ["/results/test-log3-0.1-0.1-1-result.csv"])
     fun `main test log3`(value: Double, answer: Double){
-        val main = MainFunction().apply { log = log3Mock }
+        val main = MainFunction().apply { log3 = log3Mock }
         Mockito.`when`(log3Mock(value)).thenReturn(answer)
         assertEquals((((( (log3Mock(value) + log(value, 2)) / (log(value, 5).pow(3)) ) + log(value, 10)) + log(value, 10)) / (log(value, 5) - log(value, 5))),
             main(value),
@@ -103,7 +101,7 @@ class MainIntegrationTests {
     @ParameterizedTest
     @CsvFileSource(resources = ["/results/test-log5-0.1-0.1-1-result.csv"])
     fun `main test log5`(value: Double, answer: Double){
-        val main = MainFunction().apply { log = log5Mock }
+        val main = MainFunction().apply { log5 = log5Mock }
         Mockito.`when`(log5Mock(value)).thenReturn(answer)
         assertEquals((((( (log(value, 3) + log(value, 2)) / (log5Mock(value).pow(3)) ) + log(value, 10)) + log(value, 10)) / (log5Mock(value) - log5Mock(value))),
             main(value),
@@ -114,11 +112,11 @@ class MainIntegrationTests {
     @DisplayName("main test log10")
     @ParameterizedTest
     @CsvFileSource(resources = ["/results/test-log10-0.1-0.1-1-result.csv"])
-    fun `main test log10`(value: Double, answer: Double){
-        val main = MainFunction().apply { log = log10Mock}
-        Mockito.`when`(log10Mock(value)).thenReturn(answer)
-        assertEquals((((( (log(value, 3) + log(value, 2)) / (log(value, 5).pow(3)) ) + log10Mock(value)) + log10Mock(value)) / (log(value, 5) - log(value, 5))),
-            main(value),
+    fun `main test log10`(x: Double, answer: Double){
+        val main = MainFunction().apply { log10 = log10Mock }
+        Mockito.`when`(log10Mock(x)).thenReturn(answer)
+        assertEquals((((( (log(x, 3) + log(x, 2)) / (log(x, 5).pow(3)) ) + log(x, 10)) + log(x, 10)) / (log(x, 5) - log(x, 5))),
+            main(x),
             0.001
         )
     }
