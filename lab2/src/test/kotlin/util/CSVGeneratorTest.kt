@@ -13,10 +13,23 @@ class CSVGeneratorTest {
     var log = Log()
 
     @Test
+    fun testLog3() {
+        val log = Log()
+        generator.setFilePath("test-log3-0.1-0.1-1-result")
+        generator.generate(log, 0.1, 0.1, 1.0, 0.1, 3.0)
+    }
+
+    @Test
     fun testLog5() {
         val log = Log()
         generator.setFilePath("test-log5-0.1-0.1-1-result")
         generator.generate(log, 0.1, 0.1, 1.0, 0.1, 5.0)
+    }
+    @Test
+    fun testLog10() {
+        val log = Log()
+        generator.setFilePath("test-log10-0.1-0.1-1-result")
+        generator.generate(log, 0.1, 0.1, 1.0, 0.1, 10.0)
     }
 
     @Test
@@ -39,12 +52,24 @@ class CSVGeneratorTest {
         generator.setFilePath("test-cos-0.1-0-2pi-result")
         generator.generate(cos, 0.1, 0.0, 2*PI)
     }
+    @Test
+    fun testCosminus(){
+        val cos = Cos()
+        generator.setFilePath("test-cos-0.1--1-2pi-result")
+        generator.generate(cos, 0.1, -1.0, 2*PI)
+    }
 
     @Test
     fun testTan(){
         val tan = Tan()
         generator.setFilePath("test-tan-0.1-0-2pi-result")
         generator.generate(tan, 0.1, 0.0, 2*PI)
+    }
+    @Test
+    fun testTanminus(){
+        val tan = Tan()
+        generator.setFilePath("test-tan-0.1--1-2pi-result")
+        generator.generate(tan, 0.1, -1.0, 2*PI)
     }
 
     @Test
@@ -53,12 +78,24 @@ class CSVGeneratorTest {
         generator.setFilePath("test-cot-0.1-0-2pi-result")
         generator.generate(cot, 0.1, 0.0, 2*PI)
     }
+    @Test
+    fun testCotmin(){
+        val cot = Cot()
+        generator.setFilePath("test-cot-0.1--1-2pi-result")
+        generator.generate(cot, 0.1, -1.0, 2*PI)
+    }
 
     @Test
     fun testCsc(){
         val csc = Csc()
         generator.setFilePath("test-csc-0.1-0-2pi-result")
         generator.generate(csc, 0.1, 0.0, 2*PI)
+    }
+    @Test
+    fun testCscminus(){
+        val csc = Csc()
+        generator.setFilePath("test-csc-0.1--1-2pi-result")
+        generator.generate(csc, 0.1, -1.0, 2*PI)
     }
 
     @Test

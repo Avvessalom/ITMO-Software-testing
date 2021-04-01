@@ -5,9 +5,6 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvFileSource
-import org.mockito.MockedStatic
-import org.mockito.Mockito.mockStatic
-import kotlin.test.Test
 
 class LogarithmicIntegrationTests {
     val lnMock = Mockito.mock(Ln::class.java)
@@ -21,5 +18,4 @@ class LogarithmicIntegrationTests {
         Mockito.`when`(lnMock(value)).thenReturn(answer)
         assertEquals(lnMock(value) / lnMock(value), logTrue(value, value))
     }
-
 }
