@@ -24,7 +24,7 @@
 x <= 0 : (((((tan(x) * cos(x)) - (csc(x) - cos(x))) ^ 2) / cot(x)) ^ 2)
 x > 0 : (((((log_3(x) + log_2(x)) / (log_5(x) ^ 3)) + log_10(x)) + log_10(x)) / (log_5(x) - log_5(x)))
 ```
-<h3 align=center> <a href="lab3">Лабораторная работа 3</a> </h3>
+<h3 align=center> <a href="https://github.com/Avvessalom/linkedIn-Selenium-Test">Лабораторная работа 3</a> </h3>
 Сформировать варианты использования, разработать на их основе тестовое покрытие покрытие и провести функциональное тестирование интерфейса сайта `http://www.linkedin.com/`
 
 Требования к выполнению работы:
