@@ -1,15 +1,15 @@
 # Отчёт
 Провести интеграционное тестирование программы, осуществляющей вычисление системы функций (в соответствии с вариантом).
 
-![task](/img/task.JPG)
+![task](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab2/img/task.JPG?raw=true)
 
 ##### UML диаграммы
 ##### UML диаграмма логарифмов
-![](/img/log.JPG)
+![log](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab2/img/log.JPG?raw=true)
 ##### UML диаграмма тригонометрических функций
-![](/img/Package trigonometric.png)
+![trig](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab2/img/Package%20trigonometric.png?raw=true)
 ##### UML диаграмма основной функции
-![](/img/Package mainFunction.png)
+![main](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab2/img/Package%20mainFunction.png?raw=true)
 
 ##### Пример интеграционных тестов логарифма
 ```kotlin
