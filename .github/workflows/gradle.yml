@@ -20,9 +20,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: '11'
+    - run: cd lab1
+
     - name: Build with Gradle
       run: ./gradlew build
-    - run: cd lab1
     - name: Test Coverage
       uses: codecov/codecov-action@v1
       with:
