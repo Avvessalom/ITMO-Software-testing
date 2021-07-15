@@ -1,3 +1,4 @@
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAvvessalom%2FITMO-Software-testing.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAvvessalom%2FITMO-Software-testing?ref=badge_shield)
 <h2 align=center>Тестирование программного обеспечения</a> </h2>
 
 <h3 align=center> <a href="lab1">Лабораторная работа 1</a> </h3>
@@ -21,7 +22,7 @@
 
 Провести интеграционное тестирование программы, осуществляющей вычисление системы функций (в соответствии с вариантом).
 ![task](https://github.com/Avvessalom/ITMO-Software-testing/blob/master/lab2/img/task.JPG?raw=true)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAvvessalom%2FITMO-Software-testing.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAvvessalom%2FITMO-Software-testing?ref=badge_shield)
+
 ```
 x <= 0 : (((((tan(x) * cos(x)) - (csc(x) - cos(x))) ^ 2) / cot(x)) ^ 2)
 x > 0 : (((((log_3(x) + log_2(x)) / (log_5(x) ^ 3)) + log_10(x)) + log_10(x)) / (log_5(x) - log_5(x)))
